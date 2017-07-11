@@ -2,6 +2,7 @@ import requests
 import json
 import sys
 import getopt
+import redis
 
 errorFound=None
 
@@ -43,10 +44,21 @@ elif int(year) < 0 or int(year) > 2017:
 webfinal=website+'/'+year+'?'+returnType
 
 r = requests.get(webfinal)
+quote=''
+quoteNum=-1
 if r.status_code == 200:
 	jsonQOD = json.loads(r.text)
-	print(jsonQOD)
-	print(jsonQOD['text'])
+	quote=jsonQOD['text']
+	quoteNum=jsonQOD['number']
 else:
 	print ("Web return status_code: "+str(r.status_code))
 	sys.exit(1)
+
+r_server = redis.Redis('localhost')
+cacheQuote = r_server.get(quoteNum)
+
+if cacheQuote is None:
+	r_server.set(quoteNum,quote)
+	print("Storing Quote: "+quote + " for number " + str(quoteNum))
+else:
+	print("Cached Quote: "+str(cacheQuote))
