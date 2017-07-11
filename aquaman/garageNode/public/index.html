@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Garage Pi</title>
+    <link href="index.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body>
+    <div id="app"></div>
+    <div class="form">
+      <button class="relay" id="relay-1">Garage</button>
+      <button class="relay" id="relay-2">Light</button>
+      <button class="sensor" id="garage-sensor">Garage</button>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+    <script>
+      var socket = io();
+      $('.relay').click(function(e){
+        socket.emit(e.target.id);
+        return false;
+      });
+      socket.on('status', function(state){
+        if (state.value == 'closed') {
+          $(state.id).removeClass('open');
+          $(state.id).addClass('closed');
+        } else if (state.value == 'open') {
+          $(state.id).addClass('open');
+          $(state.id).removeClass('closed');
+        } else if (state.value == 'off') {
+          $(state.id).removeClass('on');
+          $(state.id).addClass('off');
+        } else if (state.value == 'on') {
+          $(state.id).addClass('on');
+          $(state.id).removeClass('off');
+        }
+      });
+    </script>
+  </body>
+</html>
