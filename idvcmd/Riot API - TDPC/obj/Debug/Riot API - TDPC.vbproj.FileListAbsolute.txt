@@ -1,0 +1,2 @@
+C:\Users\iDevelop\AppData\Local\Temporary Projects\Riot API - TDPC\bin\Debug\Riot API - TDPC.exe.config
+C:\Users\iDevelop\Source\Repos\thirtydaychallenge\idvcmd\Riot API - TDPC\bin\Debug\Riot API - TDPC.exe.config
