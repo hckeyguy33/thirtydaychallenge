@@ -9,7 +9,13 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    @IBOutlet weak var mNameTextField: UITextField!
+    @IBOutlet weak var mGreetingLabel: UILabel!
+    
+    @IBAction func submitButtonTapped(_ sender: Any) {
+        mGreetingLabel.text = "Hi, " + mNameTextField.text!
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
