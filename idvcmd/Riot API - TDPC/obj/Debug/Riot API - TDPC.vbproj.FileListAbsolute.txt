@@ -1,2 +1,13 @@
 C:\Users\iDevelop\AppData\Local\Temporary Projects\Riot API - TDPC\bin\Debug\Riot API - TDPC.exe.config
-C:\Users\iDevelop\Source\Repos\thirtydaychallenge\idvcmd\Riot API - TDPC\bin\Debug\Riot API - TDPC.exe.config
+C:\Users\iDevelop\Source\Repos\thirtydaychallenge\idvcmd\Riot API - TDPC\bin\Debug\Riot API - TDPC.exe
+C:\Users\iDevelop\Source\Repos\thirtydaychallenge\idvcmd\Riot API - TDPC\bin\Debug\Riot API - TDPC.pdb
+C:\Users\iDevelop\Source\Repos\thirtydaychallenge\idvcmd\Riot API - TDPC\bin\Debug\Riot API - TDPC.xml
+C:\Users\iDevelop\Source\Repos\thirtydaychallenge\idvcmd\Riot API - TDPC\bin\Debug\Newtonsoft.Json.dll
+C:\Users\iDevelop\Source\Repos\thirtydaychallenge\idvcmd\Riot API - TDPC\bin\Debug\Newtonsoft.Json.xml
+C:\Users\iDevelop\Source\Repos\thirtydaychallenge\idvcmd\Riot API - TDPC\obj\Debug\Riot API - TDPC.vbprojResolveAssemblyReference.cache
+C:\Users\iDevelop\Source\Repos\thirtydaychallenge\idvcmd\Riot API - TDPC\obj\Debug\Riot_API___TDPC.idBox5.resources
+C:\Users\iDevelop\Source\Repos\thirtydaychallenge\idvcmd\Riot API - TDPC\obj\Debug\Riot_API___TDPC.Resources.resources
+C:\Users\iDevelop\Source\Repos\thirtydaychallenge\idvcmd\Riot API - TDPC\obj\Debug\Riot API - TDPC.vbproj.GenerateResource.Cache
+C:\Users\iDevelop\Source\Repos\thirtydaychallenge\idvcmd\Riot API - TDPC\obj\Debug\Riot API - TDPC.exe
+C:\Users\iDevelop\Source\Repos\thirtydaychallenge\idvcmd\Riot API - TDPC\obj\Debug\Riot API - TDPC.xml
+C:\Users\iDevelop\Source\Repos\thirtydaychallenge\idvcmd\Riot API - TDPC\obj\Debug\Riot API - TDPC.pdb

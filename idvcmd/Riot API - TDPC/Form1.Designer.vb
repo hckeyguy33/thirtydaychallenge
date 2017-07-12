@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class Form1
+Partial Class idBox5
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -24,6 +24,7 @@ Partial Class Form1
     Private Sub InitializeComponent()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.Label8 = New System.Windows.Forms.Label()
         Me.RadioButton5 = New System.Windows.Forms.RadioButton()
         Me.RadioButton4 = New System.Windows.Forms.RadioButton()
         Me.RadioButton3 = New System.Windows.Forms.RadioButton()
@@ -36,19 +37,18 @@ Partial Class Form1
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
-        Me.TextBox6 = New System.Windows.Forms.TextBox()
-        Me.TextBox5 = New System.Windows.Forms.TextBox()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.rawJSON = New System.Windows.Forms.RichTextBox()
+        Me.summonerLevelBox = New System.Windows.Forms.TextBox()
+        Me.revisionStrBox = New System.Windows.Forms.TextBox()
+        Me.revisionBox = New System.Windows.Forms.TextBox()
+        Me.iconIdBox = New System.Windows.Forms.TextBox()
+        Me.nameBox = New System.Windows.Forms.TextBox()
+        Me.idBox = New System.Windows.Forms.TextBox()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.TextBox7 = New System.Windows.Forms.TextBox()
-        Me.TextBox8 = New System.Windows.Forms.TextBox()
+        Me.devKeyBox = New System.Windows.Forms.TextBox()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Label8 = New System.Windows.Forms.Label()
+        Me.executeButton = New System.Windows.Forms.Button()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.TabControl1.SuspendLayout()
@@ -80,30 +80,39 @@ Partial Class Form1
         Me.TabPage1.Controls.Add(Me.Label3)
         Me.TabPage1.Controls.Add(Me.Label2)
         Me.TabPage1.Controls.Add(Me.Label1)
-        Me.TabPage1.Controls.Add(Me.RichTextBox1)
-        Me.TabPage1.Controls.Add(Me.TextBox6)
-        Me.TabPage1.Controls.Add(Me.TextBox5)
-        Me.TabPage1.Controls.Add(Me.TextBox4)
-        Me.TabPage1.Controls.Add(Me.TextBox3)
-        Me.TabPage1.Controls.Add(Me.TextBox2)
-        Me.TabPage1.Controls.Add(Me.TextBox1)
+        Me.TabPage1.Controls.Add(Me.rawJSON)
+        Me.TabPage1.Controls.Add(Me.summonerLevelBox)
+        Me.TabPage1.Controls.Add(Me.revisionStrBox)
+        Me.TabPage1.Controls.Add(Me.revisionBox)
+        Me.TabPage1.Controls.Add(Me.iconIdBox)
+        Me.TabPage1.Controls.Add(Me.nameBox)
+        Me.TabPage1.Controls.Add(Me.idBox)
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
         Me.TabPage1.Size = New System.Drawing.Size(1027, 323)
         Me.TabPage1.TabIndex = 0
-        Me.TabPage1.Text = "Summoner-V3"
+        Me.TabPage1.Text = "Summoner-V1.4"
         Me.TabPage1.UseVisualStyleBackColor = True
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(396, 170)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(88, 13)
+        Me.Label8.TabIndex = 25
+        Me.Label8.Text = "Type Of Request"
         '
         'RadioButton5
         '
         Me.RadioButton5.AutoSize = True
         Me.RadioButton5.Location = New System.Drawing.Point(398, 278)
         Me.RadioButton5.Name = "RadioButton5"
-        Me.RadioButton5.Size = New System.Drawing.Size(90, 17)
+        Me.RadioButton5.Size = New System.Drawing.Size(136, 17)
         Me.RadioButton5.TabIndex = 24
         Me.RadioButton5.TabStop = True
-        Me.RadioButton5.Text = "RadioButton5"
+        Me.RadioButton5.Text = "SummonerNameListDto"
         Me.RadioButton5.UseVisualStyleBackColor = True
         '
         'RadioButton4
@@ -111,10 +120,10 @@ Partial Class Form1
         Me.RadioButton4.AutoSize = True
         Me.RadioButton4.Location = New System.Drawing.Point(398, 255)
         Me.RadioButton4.Name = "RadioButton4"
-        Me.RadioButton4.Size = New System.Drawing.Size(90, 17)
+        Me.RadioButton4.Size = New System.Drawing.Size(125, 17)
         Me.RadioButton4.TabIndex = 23
         Me.RadioButton4.TabStop = True
-        Me.RadioButton4.Text = "RadioButton4"
+        Me.RadioButton4.Text = "SummonerDto/Name"
         Me.RadioButton4.UseVisualStyleBackColor = True
         '
         'RadioButton3
@@ -122,10 +131,10 @@ Partial Class Form1
         Me.RadioButton3.AutoSize = True
         Me.RadioButton3.Location = New System.Drawing.Point(398, 232)
         Me.RadioButton3.Name = "RadioButton3"
-        Me.RadioButton3.Size = New System.Drawing.Size(90, 17)
+        Me.RadioButton3.Size = New System.Drawing.Size(108, 17)
         Me.RadioButton3.TabIndex = 22
         Me.RadioButton3.TabStop = True
-        Me.RadioButton3.Text = "RadioButton3"
+        Me.RadioButton3.Text = "SummonerDto/ID"
         Me.RadioButton3.UseVisualStyleBackColor = True
         '
         'RadioButton2
@@ -133,10 +142,10 @@ Partial Class Form1
         Me.RadioButton2.AutoSize = True
         Me.RadioButton2.Location = New System.Drawing.Point(398, 209)
         Me.RadioButton2.Name = "RadioButton2"
-        Me.RadioButton2.Size = New System.Drawing.Size(90, 17)
+        Me.RadioButton2.Size = New System.Drawing.Size(109, 17)
         Me.RadioButton2.TabIndex = 21
         Me.RadioButton2.TabStop = True
-        Me.RadioButton2.Text = "RadioButton2"
+        Me.RadioButton2.Text = "MasteryPagesDto"
         Me.RadioButton2.UseVisualStyleBackColor = True
         '
         'RadioButton1
@@ -144,10 +153,10 @@ Partial Class Form1
         Me.RadioButton1.AutoSize = True
         Me.RadioButton1.Location = New System.Drawing.Point(399, 186)
         Me.RadioButton1.Name = "RadioButton1"
-        Me.RadioButton1.Size = New System.Drawing.Size(90, 17)
+        Me.RadioButton1.Size = New System.Drawing.Size(98, 17)
         Me.RadioButton1.TabIndex = 20
         Me.RadioButton1.TabStop = True
-        Me.RadioButton1.Text = "RadioButton1"
+        Me.RadioButton1.Text = "RunePagesDto"
         Me.RadioButton1.UseVisualStyleBackColor = True
         '
         'Label7
@@ -164,104 +173,108 @@ Partial Class Form1
         Me.Label6.AutoSize = True
         Me.Label6.Location = New System.Drawing.Point(167, 139)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(39, 13)
+        Me.Label6.Size = New System.Drawing.Size(493, 13)
         Me.Label6.TabIndex = 18
-        Me.Label6.Text = "Label6"
+        Me.Label6.Text = "Name - ""summonerLevel"" | Data Type - long | Description - Summoner level associat" &
+    "ed with the summer"
         '
         'Label5
         '
         Me.Label5.AutoSize = True
         Me.Label5.Location = New System.Drawing.Point(167, 113)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(39, 13)
+        Me.Label5.Size = New System.Drawing.Size(611, 13)
         Me.Label5.TabIndex = 17
-        Me.Label5.Text = "Label5"
+        Me.Label5.Text = "Name - ""revisionDateStr"" | Data Type - Date | Description - Human readable string" &
+    " representing date summoner was last modified"
         '
         'Label4
         '
         Me.Label4.AutoSize = True
         Me.Label4.Location = New System.Drawing.Point(167, 87)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(39, 13)
+        Me.Label4.Size = New System.Drawing.Size(578, 13)
         Me.Label4.TabIndex = 16
-        Me.Label4.Text = "Label4"
+        Me.Label4.Text = "Name - ""revisionDate"" | Data Type - long | Description - Date summoner was last m" &
+    "odified specified as epoch milliseconds"
         '
         'Label3
         '
         Me.Label3.AutoSize = True
         Me.Label3.Location = New System.Drawing.Point(167, 61)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(39, 13)
+        Me.Label3.Size = New System.Drawing.Size(508, 13)
         Me.Label3.TabIndex = 15
-        Me.Label3.Text = "Label3"
+        Me.Label3.Text = "Name - ""profileIconId"" | Data Type - int | Description - ID of the summoner icon " &
+    "associated with the summer"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
         Me.Label2.Location = New System.Drawing.Point(167, 35)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(39, 13)
+        Me.Label2.Size = New System.Drawing.Size(321, 13)
         Me.Label2.TabIndex = 14
-        Me.Label2.Text = "Label2"
+        Me.Label2.Text = "Name - ""name"" | Data Type - string | Description - Summoner name"
         '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.Location = New System.Drawing.Point(167, 9)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(39, 13)
+        Me.Label1.Size = New System.Drawing.Size(283, 13)
         Me.Label1.TabIndex = 13
-        Me.Label1.Text = "Label1"
+        Me.Label1.Text = "Name - ""id"" | Data Type - long | Description - Summoner ID"
         '
-        'RichTextBox1
+        'rawJSON
         '
-        Me.RichTextBox1.Location = New System.Drawing.Point(6, 186)
-        Me.RichTextBox1.Name = "RichTextBox1"
-        Me.RichTextBox1.Size = New System.Drawing.Size(386, 131)
-        Me.RichTextBox1.TabIndex = 12
-        Me.RichTextBox1.Text = ""
+        Me.rawJSON.Location = New System.Drawing.Point(6, 186)
+        Me.rawJSON.Name = "rawJSON"
+        Me.rawJSON.Size = New System.Drawing.Size(386, 131)
+        Me.rawJSON.TabIndex = 12
+        Me.rawJSON.Text = ""
         '
-        'TextBox6
+        'summonerLevelBox
         '
-        Me.TextBox6.Location = New System.Drawing.Point(6, 136)
-        Me.TextBox6.Name = "TextBox6"
-        Me.TextBox6.Size = New System.Drawing.Size(155, 20)
-        Me.TextBox6.TabIndex = 11
+        Me.summonerLevelBox.Location = New System.Drawing.Point(6, 136)
+        Me.summonerLevelBox.Name = "summonerLevelBox"
+        Me.summonerLevelBox.Size = New System.Drawing.Size(155, 20)
+        Me.summonerLevelBox.TabIndex = 11
         '
-        'TextBox5
+        'revisionStrBox
         '
-        Me.TextBox5.Location = New System.Drawing.Point(6, 110)
-        Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Size = New System.Drawing.Size(155, 20)
-        Me.TextBox5.TabIndex = 10
+        Me.revisionStrBox.Location = New System.Drawing.Point(6, 110)
+        Me.revisionStrBox.Name = "revisionStrBox"
+        Me.revisionStrBox.Size = New System.Drawing.Size(155, 20)
+        Me.revisionStrBox.TabIndex = 10
         '
-        'TextBox4
+        'revisionBox
         '
-        Me.TextBox4.Location = New System.Drawing.Point(6, 84)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(155, 20)
-        Me.TextBox4.TabIndex = 9
+        Me.revisionBox.Location = New System.Drawing.Point(6, 84)
+        Me.revisionBox.Name = "revisionBox"
+        Me.revisionBox.Size = New System.Drawing.Size(155, 20)
+        Me.revisionBox.TabIndex = 9
         '
-        'TextBox3
+        'iconIdBox
         '
-        Me.TextBox3.Location = New System.Drawing.Point(6, 58)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(155, 20)
-        Me.TextBox3.TabIndex = 8
+        Me.iconIdBox.Location = New System.Drawing.Point(6, 58)
+        Me.iconIdBox.Name = "iconIdBox"
+        Me.iconIdBox.Size = New System.Drawing.Size(155, 20)
+        Me.iconIdBox.TabIndex = 8
         '
-        'TextBox2
+        'nameBox
         '
-        Me.TextBox2.Location = New System.Drawing.Point(6, 32)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(155, 20)
-        Me.TextBox2.TabIndex = 7
+        Me.nameBox.Location = New System.Drawing.Point(6, 32)
+        Me.nameBox.Name = "nameBox"
+        Me.nameBox.Size = New System.Drawing.Size(155, 20)
+        Me.nameBox.TabIndex = 7
         '
-        'TextBox1
+        'idBox
         '
-        Me.TextBox1.Location = New System.Drawing.Point(6, 6)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(155, 20)
-        Me.TextBox1.TabIndex = 6
+        Me.idBox.Location = New System.Drawing.Point(6, 6)
+        Me.idBox.Name = "idBox"
+        Me.idBox.Size = New System.Drawing.Size(155, 20)
+        Me.idBox.TabIndex = 6
         '
         'TabPage2
         '
@@ -270,7 +283,7 @@ Partial Class Form1
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
         Me.TabPage2.Size = New System.Drawing.Size(1027, 323)
         Me.TabPage2.TabIndex = 1
-        Me.TabPage2.Text = "TabPage2"
+        Me.TabPage2.Text = "Summoner-V3"
         Me.TabPage2.UseVisualStyleBackColor = True
         '
         'TextBox7
@@ -281,12 +294,12 @@ Partial Class Form1
         Me.TextBox7.TabIndex = 9
         Me.TextBox7.Text = "Default is NA"
         '
-        'TextBox8
+        'devKeyBox
         '
-        Me.TextBox8.Location = New System.Drawing.Point(670, 415)
-        Me.TextBox8.Name = "TextBox8"
-        Me.TextBox8.Size = New System.Drawing.Size(155, 20)
-        Me.TextBox8.TabIndex = 10
+        Me.devKeyBox.Location = New System.Drawing.Point(670, 415)
+        Me.devKeyBox.Name = "devKeyBox"
+        Me.devKeyBox.Size = New System.Drawing.Size(155, 20)
+        Me.devKeyBox.TabIndex = 10
         '
         'Button1
         '
@@ -297,23 +310,14 @@ Partial Class Form1
         Me.Button1.Text = "About Dev"
         Me.Button1.UseVisualStyleBackColor = True
         '
-        'Button2
+        'executeButton
         '
-        Me.Button2.Location = New System.Drawing.Point(831, 405)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(212, 39)
-        Me.Button2.TabIndex = 13
-        Me.Button2.Text = "Execute Request"
-        Me.Button2.UseVisualStyleBackColor = True
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(396, 170)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(88, 13)
-        Me.Label8.TabIndex = 25
-        Me.Label8.Text = "Type Of Request"
+        Me.executeButton.Location = New System.Drawing.Point(831, 405)
+        Me.executeButton.Name = "executeButton"
+        Me.executeButton.Size = New System.Drawing.Size(212, 39)
+        Me.executeButton.TabIndex = 13
+        Me.executeButton.Text = "Execute Request"
+        Me.executeButton.UseVisualStyleBackColor = True
         '
         'Label9
         '
@@ -333,7 +337,7 @@ Partial Class Form1
         Me.Label10.TabIndex = 27
         Me.Label10.Text = "API Dev Key"
         '
-        'Form1
+        'idBox5
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -341,13 +345,13 @@ Partial Class Form1
         Me.ClientSize = New System.Drawing.Size(1059, 447)
         Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.Label9)
-        Me.Controls.Add(Me.Button2)
+        Me.Controls.Add(Me.executeButton)
         Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.TextBox8)
+        Me.Controls.Add(Me.devKeyBox)
         Me.Controls.Add(Me.TextBox7)
         Me.Controls.Add(Me.TabControl1)
-        Me.Name = "Form1"
-        Me.Text = "Form1"
+        Me.Name = "idBox5"
+        Me.Text = ".NET Implementation of Riot Games LoL API"
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
@@ -364,18 +368,18 @@ Partial Class Form1
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
-    Friend WithEvents RichTextBox1 As RichTextBox
-    Friend WithEvents TextBox6 As TextBox
-    Friend WithEvents TextBox5 As TextBox
-    Friend WithEvents TextBox4 As TextBox
-    Friend WithEvents TextBox3 As TextBox
-    Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents rawJSON As RichTextBox
+    Friend WithEvents summonerLevelBox As TextBox
+    Friend WithEvents revisionStrBox As TextBox
+    Friend WithEvents revisionBox As TextBox
+    Friend WithEvents iconIdBox As TextBox
+    Friend WithEvents nameBox As TextBox
+    Friend WithEvents idBox As TextBox
     Friend WithEvents TabPage2 As TabPage
     Friend WithEvents TextBox7 As TextBox
-    Friend WithEvents TextBox8 As TextBox
+    Friend WithEvents devKeyBox As TextBox
     Friend WithEvents Button1 As Button
-    Friend WithEvents Button2 As Button
+    Friend WithEvents executeButton As Button
     Friend WithEvents RadioButton5 As RadioButton
     Friend WithEvents RadioButton4 As RadioButton
     Friend WithEvents RadioButton3 As RadioButton
