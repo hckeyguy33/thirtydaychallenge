@@ -17,6 +17,7 @@ public:
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
+    void PostInitProperties();
 
 public:	
 	// Called every frame
@@ -24,4 +25,12 @@ public:
 
     float RunningTime;
 	
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Damage")
+    int32 TotalDamage;
+    
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Damage")
+    float DamageTimeInSeconds;
+    
+    UPROPERTY(BlueprintReadOnly, VisibleAnywhere, Transient, Category="Damage")
+    float DamagePerSecond;
 };
