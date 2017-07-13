@@ -1,0 +1,1 @@
+I'll be working on creating a telegram bot on go-kit running in docker.  I'll create some other microservices that listen in the go-kit framework.
