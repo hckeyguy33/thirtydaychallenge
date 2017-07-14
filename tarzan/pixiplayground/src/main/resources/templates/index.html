@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Ryan's lil canvas</title>
+</head>
+
+
+<script src="js/pixi.min.js"></script>
+
+
+<body>
+</body>
+
+
+
+<script>
+    //Create the renderer
+    var renderer = PIXI.autoDetectRenderer(256, 256);
+
+    //set the background color of the canvas
+    renderer.backgroundColor = 0x555555;
+
+    //give the canvas a dashed border
+    renderer.view.style.border = "1px dashed black";
+
+    //Add the canvas to the HTML document
+    document.body.appendChild(renderer.view);
+
+    //Create a container object called the `stage`
+    var stage = new PIXI.Container();
+
+    //Tell the `renderer` to `render` the `stage`
+    renderer.render(stage);
+
+    //resize canvas to 512
+    renderer.autoResize = true;
+    renderer.resize(512,512);
+
+    //Tell the `renderer` to `render` the `stage`
+    renderer.render(stage);
+
+    //resize to fullscreen
+    renderer.view.style.position = "absolute";
+    renderer.view.style.display = "block";
+    renderer.autoResize = true;
+    renderer.resize(window.innerWidth, window.innerHeight);
+
+    //Tell the `renderer` to `render` the `stage`
+    renderer.render(stage);
+
+    //draw a rectangle
+    var rectangle = new PIXI.Graphics();
+    rectangle.beginFill(0x66CCFF);
+    rectangle.lineStyle(4, 0xFF3300, 1);
+    rectangle.drawRect(0, 0, 64, 64);
+    rectangle.endFill();
+    rectangle.x = 170;
+    rectangle.y = 170;
+    stage.addChild(rectangle);
+    renderer.render(stage);
+
+
+</script>
+</html>
