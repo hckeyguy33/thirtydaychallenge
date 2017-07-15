@@ -34,10 +34,10 @@ void AFloatingActor::PostInitProperties()
     CalculateValues();
 }
 
-void AFloatingActor::CalledFromCpp()
-{
-    Move(10.0f);
-}
+//void AFloatingActor::CalledFromCpp_Implementation()
+//{
+//    Move(10.0f);
+//}
 
 // Called when the game starts or when spawned
 void AFloatingActor::BeginPlay()
@@ -55,6 +55,8 @@ void AFloatingActor::Tick(float DeltaTime)
     RunningTime += DeltaTime;
 
     Move(DeltaHeight);
+    
+    CalledFromCpp();
 
 }
 
