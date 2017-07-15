@@ -24,9 +24,10 @@ protected:
     void PostEditChangeProperty(FPropertyChangedEvent& PropertyChangedEvent);
     
     //blueprint implementation will be called if it exists, if not it will call our implementation
-    UFUNCTION(BlueprintCallable, Category="Damage")
+    UFUNCTION(BlueprintImplementableEvent, Category="Damage")
     void CalledFromCpp();
     
+    UFUNCTION(BlueprintCallable, Category="Damage")
     void Move(float f);
 
 public:	
