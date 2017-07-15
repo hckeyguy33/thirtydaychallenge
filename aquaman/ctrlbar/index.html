@@ -31,7 +31,7 @@
     <script src="/socket.io/socket.io.js"></script>
     <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
     <script>
-      var socket = io('http://192.168.0.81:3000');
+      var socket = io('ws://192.168.0.81:3000');
       $('.relay').click(function(e){
         socket.emit(e.target.id);
         return false;
