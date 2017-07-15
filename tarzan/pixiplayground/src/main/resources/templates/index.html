@@ -5,144 +5,39 @@
     <title>Ryan's lil canvas</title>
 </head>
 
-
-<script src="js/pixi.min.js"></script>
-
-
 <body>
+<button onclick="drawShapesAndText(renderer, stage)">ShapesAndText</button>
 </body>
 
-
-
+<script src="js/pixi.min.js"></script>
+<script src="js/tutorial/shapesAndText.js"></script>
 <script>
+
+    function setupCanvas(){
+        var renderer = PIXI.autoDetectRenderer(window.innerWidth, window.innerHeight);
+        renderer.view.style.position = "absolute";
+        renderer.view.style.display = "block";
+        renderer.autoResize = true;
+
+        //set the background color of the canvas
+        renderer.backgroundColor = 0x555555;
+
+        //give the canvas a dashed border
+        renderer.view.style.border = "1px dashed black";
+
+        //Add the canvas to the HTML document
+        document.body.appendChild(renderer.view);
+
+        return renderer;
+    }
+
     //Create the renderer
-    var renderer = PIXI.autoDetectRenderer(256, 256);
-
-    //set the background color of the canvas
-    renderer.backgroundColor = 0x555555;
-
-    //give the canvas a dashed border
-    renderer.view.style.border = "1px dashed black";
-
-    //Add the canvas to the HTML document
-    document.body.appendChild(renderer.view);
-
+    var renderer = setupCanvas();
     //Create a container object called the `stage`
     var stage = new PIXI.Container();
-
-    //Tell the `renderer` to `render` the `stage`
+    //render stage
     renderer.render(stage);
-
-    //resize canvas to 512
-    renderer.autoResize = true;
-    renderer.resize(512,512);
-
-    //Tell the `renderer` to `render` the `stage`
-    renderer.render(stage);
-
-    //resize to fullscreen
-    renderer.view.style.position = "absolute";
-    renderer.view.style.display = "block";
-    renderer.autoResize = true;
-    renderer.resize(window.innerWidth, window.innerHeight);
-
-    //Tell the `renderer` to `render` the `stage`
-    renderer.render(stage);
-
-    //draw a rectangle
-    var rectangle = new PIXI.Graphics();
-    rectangle.beginFill(0x66CCFF);
-    rectangle.lineStyle(4, 0xFF3300, 1);
-    rectangle.drawRect(0, 0, 64, 64);
-    rectangle.endFill();
-    rectangle.x = 170;
-    rectangle.y = 170;
-    stage.addChild(rectangle);
-    renderer.render(stage);
-
-    //draw a circle
-    var circle = new PIXI.Graphics();
-    circle.beginFill(0x9966FF);
-    circle.drawCircle(64, 130, 32);
-    circle.endFill();
-    //circle.x = 64;
-    //circle.y = 130;
-    stage.addChild(circle);
-    renderer.render(stage);
-
-    //draw an ellipse
-    var ellipse = new PIXI.Graphics();
-    ellipse.beginFill(0xFFFF00);
-    ellipse.drawEllipse(0, 0, 50, 20);
-    ellipse.endFill();
-    ellipse.x = 180;
-    ellipse.y = 130;
-    stage.addChild(ellipse);
-    renderer.render(stage);
-
-    //draw a rounded rectangle
-    var roundBox = new PIXI.Graphics();
-    roundBox.lineStyle(4, 0x99CCFF, 1);
-    roundBox.beginFill(0xFF9933);
-    roundBox.drawRoundedRect(0, 0, 84, 36, 10)
-    roundBox.endFill();
-    roundBox.x = 48;
-    roundBox.y = 190;
-    stage.addChild(roundBox);
-    renderer.render(stage);
-
-    //draw a line
-    var line = new PIXI.Graphics();
-    line.lineStyle(4, 0xFFFFFF, 1);
-    line.moveTo(0, 0);
-    line.lineTo(80, 50);
-    line.x = 32;
-    line.y = 32;
-    stage.addChild(line);
-    renderer.render(stage);
-
-    /**
-     * POLYGON TIME
-     */
-    var triangle = new PIXI.Graphics();
-    triangle.beginFill(0x66FF33);
-
-    //Use `drawPolygon` to define the triangle as
-    //a path array of x/y positions
-
-    triangle.drawPolygon([
-        -32, 64,             //First point
-        32, 64,              //Second point
-        0, 0                 //Third point
-    ]);
-
-    //Fill shape's color
-    triangle.endFill();
-
-    //Position the triangle after you've drawn it.
-    //The triangle's x/y position is anchored to its first point in the path
-    triangle.x = 180;
-    triangle.y = 22;
-
-    stage.addChild(triangle);
-    renderer.render(stage);
-
-    /**
-     * END POLYGON TIME
-     */
-
-
-    //draw some text
-    var message = new PIXI.Text(
-        "Hello Pixi!",
-        {fontFamily: "Arial", fontSize: 32, fill: "white"}
-        );
-
-    message.position.set(54, 96);
-    stage.addChild(message);
-    renderer.render(stage);
-
-
-
+    
 </script>
+
 </html>
