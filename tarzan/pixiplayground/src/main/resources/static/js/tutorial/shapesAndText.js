@@ -85,9 +85,9 @@ function getText(text){
     return message;
 }
 
-function drawShapesAndText(renderer){
+function drawShapesAndText(renderer, stage){
     //Create a container object called the `stage`
-    var stage = new PIXI.Container();
+    //var stage = new PIXI.Container();
 
     //draw a rectangle
     var rectangle = getRectangle();
