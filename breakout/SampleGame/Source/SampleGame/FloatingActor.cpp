@@ -15,11 +15,29 @@ AFloatingActor::AFloatingActor()
     
 }
 
+void AFloatingActor::CalculateValues(){
+    DamagePerSecond = TotalDamage / DamageTimeInSeconds;
+}
+
+#if WITH_EDITOR
+void AFloatingActor::PostEditChangeProperty(FPropertyChangedEvent& PropertyChangedEvent)
+{
+    CalculateValues();
+    
+    Super::PostEditChangeProperty(PropertyChangedEvent);
+}
+#endif
+
 void AFloatingActor::PostInitProperties()
 {
     Super::PostInitProperties();
-    DamagePerSecond = TotalDamage / DamageTimeInSeconds;
+    CalculateValues();
 }
+
+//void AFloatingActor::CalledFromCpp_Implementation()
+//{
+//    Move(10.0f);
+//}
 
 // Called when the game starts or when spawned
 void AFloatingActor::BeginPlay()
@@ -33,10 +51,19 @@ void AFloatingActor::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
     
-    FVector NewLocation = GetActorLocation();
     float DeltaHeight = (FMath::Sin(RunningTime + DeltaTime) - FMath::Sin(RunningTime));
-    NewLocation.Z += DeltaHeight * 20.0f; //Scales the height by factor of 20
     RunningTime += DeltaTime;
+
+    Move(DeltaHeight);
+    
+    CalledFromCpp();
+
+}
+
+void AFloatingActor::Move(float DeltaHeight){
+    
+    FVector NewLocation = GetActorLocation();
+    NewLocation.Z += DeltaHeight * 20.0f;  //Scales the height by factor of 20
     SetActorLocation(NewLocation);
 }
 

@@ -18,6 +18,17 @@ protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
     void PostInitProperties();
+    
+    UFUNCTION(BlueprintCallable, Category="Damage")
+    void CalculateValues();
+    void PostEditChangeProperty(FPropertyChangedEvent& PropertyChangedEvent);
+    
+    //blueprint implementation will be called if it exists, if not it will call our implementation
+    UFUNCTION(BlueprintImplementableEvent, Category="Damage")
+    void CalledFromCpp();
+    
+    UFUNCTION(BlueprintCallable, Category="Damage")
+    void Move(float f);
 
 public:	
 	// Called every frame

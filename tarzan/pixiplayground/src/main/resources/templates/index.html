@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Ryan's lil canvas</title>
+</head>
+
+<body>
+<button onclick="drawShapesAndText(renderer, stage)">ShapesAndText</button>
+</body>
+
+<script src="js/pixi.min.js"></script>
+<script src="js/tutorial/shapesAndText.js"></script>
+<script>
+
+    function setupCanvas(){
+        var renderer = PIXI.autoDetectRenderer(window.innerWidth, window.innerHeight);
+        renderer.view.style.position = "absolute";
+        renderer.view.style.display = "block";
+        renderer.autoResize = true;
+
+        //set the background color of the canvas
+        renderer.backgroundColor = 0x555555;
+
+        //give the canvas a dashed border
+        renderer.view.style.border = "1px dashed black";
+
+        //Add the canvas to the HTML document
+        document.body.appendChild(renderer.view);
+
+        return renderer;
+    }
+
+    //Create the renderer
+    var renderer = setupCanvas();
+    //Create a container object called the `stage`
+    var stage = new PIXI.Container();
+    //render stage
+    renderer.render(stage);
+    
+</script>
+
+</html>
