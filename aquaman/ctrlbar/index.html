@@ -25,15 +25,23 @@
   <script>
     const ipcRenderer = require('electron').ipcRenderer;
     function config() {
-      // const ipcRenderer = require('electron').ipcRenderer;
       ipcRenderer.send('show-config-menu');
     }
     function socket_send(msg) {
       ipcRenderer.send('socket-send', msg);
     }
     ipcRenderer.send('register-listener', 'status');
-    ipcRenderer.on('status', function (event, arg) {
-      document.getElementById('garage-sensor').addClass(arg);
+    ipcRenderer.on('status', function (event, state) {
+      console.log('on status ' + state.id + ':' + state.value);
+      if ('#garage-sensor' === state.id) {
+        document.getElementById('garage-sensor').className = 'sensor ' + state.value;
+      }
+      if ('#relay-1' === state.id) {
+        document.getElementById('relay-1').className = 'relay ' + state.value;
+      }
+      if ('#relay-2' === state.id) {
+        document.getElementById('relay-2').className = 'relay ' + state.value;
+      }
     });
   </script>
 </html>

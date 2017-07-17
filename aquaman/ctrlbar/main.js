@@ -71,22 +71,6 @@ app.on('ready', function() {
     function getTrayPosY() {
       return trayPositionVert == 'bottom' ? cursorPosition.y - WINDOW_HEIGHT - VERT_PADDING : cursorPosition.y + VERT_PADDING;
     }
-
-    // socket.on('status', function(state){
-    //   if (state.value == 'closed') {
-    //     $(state.id).removeClass('open');
-    //     $(state.id).addClass('closed');
-    //   } else if (state.value == 'open') {
-    //     $(state.id).addClass('open');
-    //     $(state.id).removeClass('closed');
-    //   } else if (state.value == 'off') {
-    //     $(state.id).removeClass('on');
-    //     $(state.id).addClass('off');
-    //   } else if (state.value == 'on') {
-    //     $(state.id).addClass('on');
-    //     $(state.id).removeClass('off');
-    //   }
-    // });
   });
 
   const {Menu, MenuItem} = require('electron');
@@ -100,25 +84,13 @@ app.on('ready', function() {
   });
   ipcMain.on('socket-send', (event, arg) => {
       console.log('on socket-send ' + arg);
-      // socket.emit(arg);
-  });
-  ipcMain.on('register-listener', (event, arg) => {
-      console.log('on register-listener ' + arg);
-      sensorListener = event.sender;
-      // socket.emit(arg);
+      socket.emit(arg);
   });
 
-  var onOff = 'on';
-  var sensorListener = null;
-  setInterval( function () {
-    if (sensorListener != null) {
-      console.log('Emitting: ' + onOff);
-      sensorListener.send('status', onOff);
-      if (onOff === 'off') {
-        onOff = 'on';
-      } else {
-        onOff = 'off';
-      }
+  socket.on('status', function (state) {
+    if (window != null) {
+      window.webContents.send('status', state)
+      console.log('socket: on status: ' + state.id + ':'+ state.value);
     }
-  }, 3000);
+  });
 });
