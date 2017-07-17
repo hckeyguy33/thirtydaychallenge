@@ -26,3 +26,13 @@ My design will be pretty simple
 3) Create a web page to serve (or respond to the stdout)
 
 
+Summary 
+
+Week 1 - 7/10 - 7/16
+1) Create python injector into redis
+2) Created ruby and ruby on rails helloworld projects
+3) Created (sic) shakesphere application
+
+Thoughts
+Didn't get as much done as I would have like but I'm also going to be highly available this week on vacation, I'm looking to punch through a bunch of stuff this week
+

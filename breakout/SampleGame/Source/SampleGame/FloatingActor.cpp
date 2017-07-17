@@ -60,10 +60,11 @@ void AFloatingActor::Tick(float DeltaTime)
 
 }
 
+
 void AFloatingActor::Move(float DeltaHeight){
     
     FVector NewLocation = GetActorLocation();
-    NewLocation.Z += DeltaHeight * 20.0f;  //Scales the height by factor of 20
+    NewLocation.Z += DeltaHeight * 15.0f;  //Scales the height by factor of 20
     SetActorLocation(NewLocation);
 }
 
