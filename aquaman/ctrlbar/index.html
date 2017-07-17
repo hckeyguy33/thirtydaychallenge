@@ -1,55 +1,39 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8"/>
-        <link rel="stylesheet" type="text/css" href="index.css">
-        <title>CtrlBar</title>
-    </head>
+  <head>
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <title>CtrlBar</title>
+  </head>
     <body>
-        <div class="container">
-            <div class="popover">
-                    <div class="header">
-                        <h1>CtrlBar</h1>
-                    </div>
-                    <div class="form">
-                      <button class="relay" id="relay-1">Garage</button>
-                      <button class="relay" id="relay-2">Light</button>
-                      <button class="sensor" id="garage-sensor">Garage</button>
-                    </div>
-                    <div class="menu">
-                        <a class="config" href="#" onclick="return config();">&nbsp;</a>
-                    </div>
-            </div>
+      <div class="container">
+        <div class="popover">
+          <div class="header">
+            <h1>CtrlBar</h1>
+          </div>
+          <div class="form">
+            <button class="relay" id="relay-1" onclick="return socket_send('relay-1');">Garage</button>
+            <button class="relay" id="relay-2" onclick="return socket_send('relay-2');">Light</button>
+            <button class="sensor" id="garage-sensor">Garage</button>
+          </div>
+          <div class="menu">
+            <a class="config" href="#" onclick="return config();">&nbsp;</a>
+          </div>
         </div>
-    </body>
-    <script>
-        function config() {
-            const ipcRenderer = require('electron').ipcRenderer;
-            ipcRenderer.send('show-config-menu');
-        }
-    </script>
-    <script src="/socket.io/socket.io.js"></script>
-    <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
-    <script>
-      var socket = io('ws://192.168.0.81:3000');
-      $('.relay').click(function(e){
-        socket.emit(e.target.id);
-        return false;
-      });
-      socket.on('status', function(state){
-        if (state.value == 'closed') {
-          $(state.id).removeClass('open');
-          $(state.id).addClass('closed');
-        } else if (state.value == 'open') {
-          $(state.id).addClass('open');
-          $(state.id).removeClass('closed');
-        } else if (state.value == 'off') {
-          $(state.id).removeClass('on');
-          $(state.id).addClass('off');
-        } else if (state.value == 'on') {
-          $(state.id).addClass('on');
-          $(state.id).removeClass('off');
-        }
-      });
-    </script>
+      </div>
+  </body>
+  <script>
+    const ipcRenderer = require('electron').ipcRenderer;
+    function config() {
+      // const ipcRenderer = require('electron').ipcRenderer;
+      ipcRenderer.send('show-config-menu');
+    }
+    function socket_send(msg) {
+      ipcRenderer.send('socket-send', msg);
+    }
+    ipcRenderer.send('register-listener', 'status');
+    ipcRenderer.on('status', function (event, arg) {
+      document.getElementById('garage-sensor').addClass(arg);
+    });
+  </script>
 </html>

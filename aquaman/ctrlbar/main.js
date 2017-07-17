@@ -5,6 +5,9 @@ var electron = require('electron');
 var BrowserWindow = electron.BrowserWindow;
 const {app, Menu, Tray} = require('electron');
 
+const io = require('socket.io-client');
+const socket = io('http://192.168.0.81:3000');
+
 var trayIcon = null;
 var window = null;
 
@@ -28,7 +31,7 @@ app.on('ready', function() {
   });
 
   window.loadURL('file://' + __dirname + '/index.html');
-  // window.loadURL('http://192.168.0.81:3000');
+
 
   window.on('close', function () {
     window = null;
@@ -68,6 +71,22 @@ app.on('ready', function() {
     function getTrayPosY() {
       return trayPositionVert == 'bottom' ? cursorPosition.y - WINDOW_HEIGHT - VERT_PADDING : cursorPosition.y + VERT_PADDING;
     }
+
+    // socket.on('status', function(state){
+    //   if (state.value == 'closed') {
+    //     $(state.id).removeClass('open');
+    //     $(state.id).addClass('closed');
+    //   } else if (state.value == 'open') {
+    //     $(state.id).addClass('open');
+    //     $(state.id).removeClass('closed');
+    //   } else if (state.value == 'off') {
+    //     $(state.id).removeClass('on');
+    //     $(state.id).addClass('off');
+    //   } else if (state.value == 'on') {
+    //     $(state.id).addClass('on');
+    //     $(state.id).removeClass('off');
+    //   }
+    // });
   });
 
   const {Menu, MenuItem} = require('electron');
@@ -79,5 +98,27 @@ app.on('ready', function() {
   ipcMain.on('show-config-menu', (event) => {
       menu.popup(window);
   });
+  ipcMain.on('socket-send', (event, arg) => {
+      console.log('on socket-send ' + arg);
+      // socket.emit(arg);
+  });
+  ipcMain.on('register-listener', (event, arg) => {
+      console.log('on register-listener ' + arg);
+      sensorListener = event.sender;
+      // socket.emit(arg);
+  });
 
+  var onOff = 'on';
+  var sensorListener = null;
+  setInterval( function () {
+    if (sensorListener != null) {
+      console.log('Emitting: ' + onOff);
+      sensorListener.send('status', onOff);
+      if (onOff === 'off') {
+        onOff = 'on';
+      } else {
+        onOff = 'off';
+      }
+    }
+  }, 3000);
 });

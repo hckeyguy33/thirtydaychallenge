@@ -4,7 +4,7 @@
   "description": "Menubar electron application to control IoT devices",
   "main": "index.js",
   "scripts": {
-    "start": "electron .",
+    "start": "electron main.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -16,6 +16,8 @@
   "author": "Daniel Graham",
   "license": "ISC",
   "dependencies": {
-    "menubar": "^5.2.3"
+    "jquery": "^3.2.1",
+    "menubar": "^5.2.3",
+    "socket.io": "^2.0.3"
   }
 }
