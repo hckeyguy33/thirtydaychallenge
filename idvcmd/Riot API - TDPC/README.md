@@ -3,3 +3,4 @@
 Log -
 
 7/12/2017 - Need to finish setting property values for RadioButtons. Complete executeButton_Click action and all required actions under.
+7/17/2017 - Need to finish defining the GUI for each tab and look into constructing the Request URL's.
