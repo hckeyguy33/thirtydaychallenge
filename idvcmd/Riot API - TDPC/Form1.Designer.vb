@@ -25,11 +25,11 @@ Partial Class idBox5
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.RadioButton5 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton4 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton3 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton2 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton1 = New System.Windows.Forms.RadioButton()
+        Me.nameListRButton = New System.Windows.Forms.RadioButton()
+        Me.summonerNameRButton = New System.Windows.Forms.RadioButton()
+        Me.summonerIDRButton = New System.Windows.Forms.RadioButton()
+        Me.masteriesRButton = New System.Windows.Forms.RadioButton()
+        Me.runesRButton = New System.Windows.Forms.RadioButton()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -51,6 +51,10 @@ Partial Class idBox5
         Me.executeButton = New System.Windows.Forms.Button()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
+        Me.TabPage3 = New System.Windows.Forms.TabPage()
+        Me.TabPage4 = New System.Windows.Forms.TabPage()
+        Me.TabPage5 = New System.Windows.Forms.TabPage()
+        Me.TabPage6 = New System.Windows.Forms.TabPage()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.SuspendLayout()
@@ -59,6 +63,10 @@ Partial Class idBox5
         '
         Me.TabControl1.Controls.Add(Me.TabPage1)
         Me.TabControl1.Controls.Add(Me.TabPage2)
+        Me.TabControl1.Controls.Add(Me.TabPage3)
+        Me.TabControl1.Controls.Add(Me.TabPage4)
+        Me.TabControl1.Controls.Add(Me.TabPage5)
+        Me.TabControl1.Controls.Add(Me.TabPage6)
         Me.TabControl1.Location = New System.Drawing.Point(12, 12)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
@@ -68,11 +76,11 @@ Partial Class idBox5
         'TabPage1
         '
         Me.TabPage1.Controls.Add(Me.Label8)
-        Me.TabPage1.Controls.Add(Me.RadioButton5)
-        Me.TabPage1.Controls.Add(Me.RadioButton4)
-        Me.TabPage1.Controls.Add(Me.RadioButton3)
-        Me.TabPage1.Controls.Add(Me.RadioButton2)
-        Me.TabPage1.Controls.Add(Me.RadioButton1)
+        Me.TabPage1.Controls.Add(Me.nameListRButton)
+        Me.TabPage1.Controls.Add(Me.summonerNameRButton)
+        Me.TabPage1.Controls.Add(Me.summonerIDRButton)
+        Me.TabPage1.Controls.Add(Me.masteriesRButton)
+        Me.TabPage1.Controls.Add(Me.runesRButton)
         Me.TabPage1.Controls.Add(Me.Label7)
         Me.TabPage1.Controls.Add(Me.Label6)
         Me.TabPage1.Controls.Add(Me.Label5)
@@ -104,60 +112,60 @@ Partial Class idBox5
         Me.Label8.TabIndex = 25
         Me.Label8.Text = "Type Of Request"
         '
-        'RadioButton5
+        'nameListRButton
         '
-        Me.RadioButton5.AutoSize = True
-        Me.RadioButton5.Location = New System.Drawing.Point(398, 278)
-        Me.RadioButton5.Name = "RadioButton5"
-        Me.RadioButton5.Size = New System.Drawing.Size(136, 17)
-        Me.RadioButton5.TabIndex = 24
-        Me.RadioButton5.TabStop = True
-        Me.RadioButton5.Text = "SummonerNameListDto"
-        Me.RadioButton5.UseVisualStyleBackColor = True
+        Me.nameListRButton.AutoSize = True
+        Me.nameListRButton.Location = New System.Drawing.Point(398, 278)
+        Me.nameListRButton.Name = "nameListRButton"
+        Me.nameListRButton.Size = New System.Drawing.Size(136, 17)
+        Me.nameListRButton.TabIndex = 24
+        Me.nameListRButton.TabStop = True
+        Me.nameListRButton.Text = "SummonerNameListDto"
+        Me.nameListRButton.UseVisualStyleBackColor = True
         '
-        'RadioButton4
+        'summonerNameRButton
         '
-        Me.RadioButton4.AutoSize = True
-        Me.RadioButton4.Location = New System.Drawing.Point(398, 255)
-        Me.RadioButton4.Name = "RadioButton4"
-        Me.RadioButton4.Size = New System.Drawing.Size(125, 17)
-        Me.RadioButton4.TabIndex = 23
-        Me.RadioButton4.TabStop = True
-        Me.RadioButton4.Text = "SummonerDto/Name"
-        Me.RadioButton4.UseVisualStyleBackColor = True
+        Me.summonerNameRButton.AutoSize = True
+        Me.summonerNameRButton.Location = New System.Drawing.Point(398, 255)
+        Me.summonerNameRButton.Name = "summonerNameRButton"
+        Me.summonerNameRButton.Size = New System.Drawing.Size(125, 17)
+        Me.summonerNameRButton.TabIndex = 23
+        Me.summonerNameRButton.TabStop = True
+        Me.summonerNameRButton.Text = "SummonerDto/Name"
+        Me.summonerNameRButton.UseVisualStyleBackColor = True
         '
-        'RadioButton3
+        'summonerIDRButton
         '
-        Me.RadioButton3.AutoSize = True
-        Me.RadioButton3.Location = New System.Drawing.Point(398, 232)
-        Me.RadioButton3.Name = "RadioButton3"
-        Me.RadioButton3.Size = New System.Drawing.Size(108, 17)
-        Me.RadioButton3.TabIndex = 22
-        Me.RadioButton3.TabStop = True
-        Me.RadioButton3.Text = "SummonerDto/ID"
-        Me.RadioButton3.UseVisualStyleBackColor = True
+        Me.summonerIDRButton.AutoSize = True
+        Me.summonerIDRButton.Location = New System.Drawing.Point(398, 232)
+        Me.summonerIDRButton.Name = "summonerIDRButton"
+        Me.summonerIDRButton.Size = New System.Drawing.Size(108, 17)
+        Me.summonerIDRButton.TabIndex = 22
+        Me.summonerIDRButton.TabStop = True
+        Me.summonerIDRButton.Text = "SummonerDto/ID"
+        Me.summonerIDRButton.UseVisualStyleBackColor = True
         '
-        'RadioButton2
+        'masteriesRButton
         '
-        Me.RadioButton2.AutoSize = True
-        Me.RadioButton2.Location = New System.Drawing.Point(398, 209)
-        Me.RadioButton2.Name = "RadioButton2"
-        Me.RadioButton2.Size = New System.Drawing.Size(109, 17)
-        Me.RadioButton2.TabIndex = 21
-        Me.RadioButton2.TabStop = True
-        Me.RadioButton2.Text = "MasteryPagesDto"
-        Me.RadioButton2.UseVisualStyleBackColor = True
+        Me.masteriesRButton.AutoSize = True
+        Me.masteriesRButton.Location = New System.Drawing.Point(398, 209)
+        Me.masteriesRButton.Name = "masteriesRButton"
+        Me.masteriesRButton.Size = New System.Drawing.Size(109, 17)
+        Me.masteriesRButton.TabIndex = 21
+        Me.masteriesRButton.TabStop = True
+        Me.masteriesRButton.Text = "MasteryPagesDto"
+        Me.masteriesRButton.UseVisualStyleBackColor = True
         '
-        'RadioButton1
+        'runesRButton
         '
-        Me.RadioButton1.AutoSize = True
-        Me.RadioButton1.Location = New System.Drawing.Point(399, 186)
-        Me.RadioButton1.Name = "RadioButton1"
-        Me.RadioButton1.Size = New System.Drawing.Size(98, 17)
-        Me.RadioButton1.TabIndex = 20
-        Me.RadioButton1.TabStop = True
-        Me.RadioButton1.Text = "RunePagesDto"
-        Me.RadioButton1.UseVisualStyleBackColor = True
+        Me.runesRButton.AutoSize = True
+        Me.runesRButton.Location = New System.Drawing.Point(399, 186)
+        Me.runesRButton.Name = "runesRButton"
+        Me.runesRButton.Size = New System.Drawing.Size(98, 17)
+        Me.runesRButton.TabIndex = 20
+        Me.runesRButton.TabStop = True
+        Me.runesRButton.Text = "RunePagesDto"
+        Me.runesRButton.UseVisualStyleBackColor = True
         '
         'Label7
         '
@@ -337,6 +345,42 @@ Partial Class idBox5
         Me.Label10.TabIndex = 27
         Me.Label10.Text = "API Dev Key"
         '
+        'TabPage3
+        '
+        Me.TabPage3.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage3.Name = "TabPage3"
+        Me.TabPage3.Size = New System.Drawing.Size(1027, 323)
+        Me.TabPage3.TabIndex = 2
+        Me.TabPage3.Text = "TabPage3"
+        Me.TabPage3.UseVisualStyleBackColor = True
+        '
+        'TabPage4
+        '
+        Me.TabPage4.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage4.Name = "TabPage4"
+        Me.TabPage4.Size = New System.Drawing.Size(1027, 323)
+        Me.TabPage4.TabIndex = 3
+        Me.TabPage4.Text = "TabPage4"
+        Me.TabPage4.UseVisualStyleBackColor = True
+        '
+        'TabPage5
+        '
+        Me.TabPage5.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage5.Name = "TabPage5"
+        Me.TabPage5.Size = New System.Drawing.Size(1027, 323)
+        Me.TabPage5.TabIndex = 4
+        Me.TabPage5.Text = "TabPage5"
+        Me.TabPage5.UseVisualStyleBackColor = True
+        '
+        'TabPage6
+        '
+        Me.TabPage6.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage6.Name = "TabPage6"
+        Me.TabPage6.Size = New System.Drawing.Size(1027, 323)
+        Me.TabPage6.TabIndex = 5
+        Me.TabPage6.Text = "TabPage6"
+        Me.TabPage6.UseVisualStyleBackColor = True
+        '
         'idBox5
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -380,13 +424,17 @@ Partial Class idBox5
     Friend WithEvents devKeyBox As TextBox
     Friend WithEvents Button1 As Button
     Friend WithEvents executeButton As Button
-    Friend WithEvents RadioButton5 As RadioButton
-    Friend WithEvents RadioButton4 As RadioButton
-    Friend WithEvents RadioButton3 As RadioButton
-    Friend WithEvents RadioButton2 As RadioButton
-    Friend WithEvents RadioButton1 As RadioButton
+    Friend WithEvents nameListRButton As RadioButton
+    Friend WithEvents summonerNameRButton As RadioButton
+    Friend WithEvents summonerIDRButton As RadioButton
+    Friend WithEvents masteriesRButton As RadioButton
+    Friend WithEvents runesRButton As RadioButton
     Friend WithEvents Label7 As Label
     Friend WithEvents Label8 As Label
     Friend WithEvents Label9 As Label
     Friend WithEvents Label10 As Label
+    Friend WithEvents TabPage3 As TabPage
+    Friend WithEvents TabPage4 As TabPage
+    Friend WithEvents TabPage5 As TabPage
+    Friend WithEvents TabPage6 As TabPage
 End Class
