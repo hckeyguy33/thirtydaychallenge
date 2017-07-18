@@ -1,5 +1,5 @@
 function drawSprites(renderer, stage){
-    PIXI.loader
+    loader
         .add("images/ryanhead.jpg")
         .once('complete', function(loader, resources){
             afterImageLoad(renderer, stage);
@@ -8,8 +8,8 @@ function drawSprites(renderer, stage){
 }
 
 function afterImageLoad(renderer, stage){
-    var sprite = new PIXI.Sprite(
-        PIXI.loader.resources["images/ryanhead.jpg"].texture
+    var sprite = new Sprite(
+        loader.resources["images/ryanhead.jpg"].texture
     );
 
     stage.addChild(sprite);
