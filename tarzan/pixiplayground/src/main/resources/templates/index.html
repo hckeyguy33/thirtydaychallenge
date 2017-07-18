@@ -12,13 +12,14 @@
 </body>
 
 <script src="js/pixi.min.js"></script>
+<script src="js/tutorial/aliases.js"></script>
 <script src="js/tutorial/shapesAndText.js"></script>
 <script src="js/tutorial/sprites.js"></script>
 
 <script>
 
     function setupCanvas(){
-        var renderer = PIXI.autoDetectRenderer(window.innerWidth, window.innerHeight);
+        var renderer = autoDetectRenderer(window.innerWidth, window.innerHeight);
         renderer.view.style.position = "absolute";
         renderer.view.style.display = "block";
         renderer.autoResize = true;
@@ -38,7 +39,7 @@
     //Create the renderer
     var renderer = setupCanvas();
     //Create a container object called the `stage`
-    var stage = new PIXI.Container();
+    var stage = new Container();
     //render stage
     renderer.render(stage);
 

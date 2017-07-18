@@ -1,6 +1,6 @@
 function getRectangle(){
     //draw a rectangle
-    var rectangle = new PIXI.Graphics();
+    var rectangle = new Graphics();
     rectangle.beginFill(0x66CCFF);
     rectangle.lineStyle(4, 0xFF3300, 1);
     rectangle.drawRect(0, 0, 64, 64);
@@ -11,7 +11,7 @@ function getRectangle(){
 }
 
 function getCircle(){
-    var circle = new PIXI.Graphics();
+    var circle = new Graphics();
     circle.beginFill(0x9966FF);
     circle.drawCircle(64, 130, 32);
     circle.endFill();
@@ -21,7 +21,7 @@ function getCircle(){
 }
 
 function getEllipse(){
-    var ellipse = new PIXI.Graphics();
+    var ellipse = new Graphics();
     ellipse.beginFill(0xFFFF00);
     ellipse.drawEllipse(0, 0, 50, 20);
     ellipse.endFill();
@@ -31,7 +31,7 @@ function getEllipse(){
 }
 
 function getRoundedRectangle(){
-    var roundBox = new PIXI.Graphics();
+    var roundBox = new Graphics();
     roundBox.lineStyle(4, 0x99CCFF, 1);
     roundBox.beginFill(0xFF9933);
     roundBox.drawRoundedRect(0, 0, 84, 36, 10)
@@ -42,7 +42,7 @@ function getRoundedRectangle(){
 }
 
 function getLine(){
-    var line = new PIXI.Graphics();
+    var line = new Graphics();
     line.lineStyle(4, 0xFFFFFF, 1);
     line.moveTo(0, 0);
     line.lineTo(80, 50);
@@ -52,7 +52,7 @@ function getLine(){
 }
 
 function getTriangle(){
-    var triangle = new PIXI.Graphics();
+    var triangle = new Graphics();
     triangle.beginFill(0x66FF33);
 
     //Use `drawPolygon` to define the triangle as
@@ -76,7 +76,7 @@ function getTriangle(){
 }
 
 function getText(text){
-    var message = new PIXI.Text(
+    var message = new Text(
         text, {fontFamily: "Arial", fontSize: 32, fill: "white"}
     );
 
@@ -87,7 +87,7 @@ function getText(text){
 
 function drawShapesAndText(renderer, stage){
     //Create a container object called the `stage`
-    //var stage = new PIXI.Container();
+    //var stage = new Container();
 
     //draw a rectangle
     var rectangle = getRectangle();
