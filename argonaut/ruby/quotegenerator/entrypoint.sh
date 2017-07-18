@@ -1,5 +1,7 @@
 #!/bin/bash
 
+whoami
+
 cd /quotegenerator
 
 if [ $BASHSTART -eq 1 ];
