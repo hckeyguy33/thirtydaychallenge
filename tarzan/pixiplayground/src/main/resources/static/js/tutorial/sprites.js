@@ -20,12 +20,40 @@ function loadProgressHandler(loader, resource){
 }
 
 function afterImageLoad(renderer, stage){
-    var sprite = new Sprite(
+    var ryanSprite = new Sprite(
         //loader.resources.ryanHead.texture //alternative
         //loader.resources.["ryanHead"].texture //another alternative
         loader.resources["images/ryanhead.jpg"].texture
     );
 
-    stage.addChild(sprite);
+    //move ryan's head
+    ryanSprite.x = 196;
+    ryanSprite.y = 196;
+    //ryanSprite.position(96, 96); //alternative
+
+    //make head tiny
+    ryanSprite.width = 80;
+    ryanSprite.height = 120;
+
+    //OR resize it proportionately
+    ryanSprite.scale.x = 0.5;
+    ryanSprite.scale.y = 0.5;
+    //ryanSprite.scale.set(0.5, 0.5); //alternative
+
+    //rotate the head on default anchor (top left of image)
+    //ryanSprite.rotation = 0.5;
+
+    //rotate the head from the middle
+    ryanSprite.anchor.x = 0.5;
+    ryanSprite.anchor.y = 0.5;
+    //ryanSprite.anchor.set(0.5, 0.5); //alternative
+    ryanSprite.rotation = 0.5;
+
+    //TODO anchor vs pivot... confusing
+
+    
+
+
+    stage.addChild(ryanSprite);
     renderer.render(stage);
 }
