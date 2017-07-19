@@ -10,6 +10,10 @@ RUN apt-get update -y
 RUN apt-get install sbt -y
 
 COPY code /opt
-
 COPY entrypoint.sh /
+
+WORKDIR /opt
+RUN sbt update
+RUN sbt compile
+
 ENTRYPOINT /entrypoint.sh
