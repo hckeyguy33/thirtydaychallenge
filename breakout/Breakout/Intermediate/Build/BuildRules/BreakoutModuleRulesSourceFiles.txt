@@ -1,0 +1,3 @@
+/Users/grobinson/git/github/30Day/thirtydaychallenge/breakout/Breakout/Source/Breakout/Breakout.Build.cs
+/Users/grobinson/git/github/30Day/thirtydaychallenge/breakout/Breakout/Source/Breakout.Target.cs
+/Users/grobinson/git/github/30Day/thirtydaychallenge/breakout/Breakout/Source/BreakoutEditor.Target.cs

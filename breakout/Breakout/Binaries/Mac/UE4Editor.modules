@@ -1,0 +1,9 @@
+{
+	"Changelist" : 3450819,
+	"CompatibleChangelist" : 3299760,
+	"BuildId" : "",
+	"Modules" : 
+	{
+		"Breakout" : "UE4Editor-Breakout.dylib"
+	}
+}
