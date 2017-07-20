@@ -4,6 +4,7 @@ function drawSprites(renderer, stage){
         .add("images/ryanhead.jpg")
         .add("images/megahead.jpg")
         .add("images/small.jpg")
+        .add("images/tileset.png")
         .on("progress", loadProgressHandler)
         .once('complete', function(loader, resources){
             afterImageLoad(renderer, stage);
@@ -49,11 +50,33 @@ function afterImageLoad(renderer, stage){
     //ryanSprite.anchor.set(0.5, 0.5); //alternative
     ryanSprite.rotation = 0.5;
 
-    //TODO anchor vs pivot... confusing
-
-    
-
-
     stage.addChild(ryanSprite);
     renderer.render(stage);
+
+    //TODO anchor vs pivot... confusing
+
+    /*
+        begin tilesets
+     */
+
+    //load tileset and use rocket image
+    var tileset = loader.resources["images/tileset.png"].texture;
+
+    //Create a rectangle object that defines the position and
+    //size of the sub-image you want to extract from the texture
+    var rectangle = new Rectangle(192, 128, 64, 64);
+
+    //Tell the texture to use that rectangular section
+    tileset.frame = rectangle;
+
+    //Create the sprite from the texture
+    var rocket = new Sprite(tileset);
+
+    //Position the rocket sprite on the canvas
+    rocket.x = 32;
+    rocket.y = 32;
+
+    stage.addChild(rocket);
+    renderer.render(stage);
+
 }
