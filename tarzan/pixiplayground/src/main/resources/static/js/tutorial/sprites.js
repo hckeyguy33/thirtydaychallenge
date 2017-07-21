@@ -5,6 +5,7 @@ function drawSprites(renderer, stage){
         .add("images/megahead.jpg")
         .add("images/small.jpg")
         .add("images/tileset.png")
+        .add("images/treasureHunter.json")
         .on("progress", loadProgressHandler)
         .once('complete', function(loader, resources){
             afterImageLoad(renderer, stage);
@@ -77,6 +78,22 @@ function afterImageLoad(renderer, stage){
     rocket.y = 32;
 
     stage.addChild(rocket);
+    renderer.render(stage);
+
+    /*
+        Begin texture atlas
+     */
+
+    //get treasure sprite
+    var atlasTextures = loader.resources["images/treasureHunter.json"].textures;
+    var treasure = new Sprite(atlasTextures["treasure.png"]);
+
+    //Position the treasure next to the right edge of the canvas
+    treasure.x = stage.width - treasure.width - 48;
+    treasure.y = stage.height / 2 - treasure.height / 2;
+    stage.addChild(treasure);
+
+    //render
     renderer.render(stage);
 
 }
