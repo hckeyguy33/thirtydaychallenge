@@ -24,6 +24,9 @@ function loadProgressHandler(loader, resource){
 //let the rocket be accessed by other functions
 var rocket;
 
+//for game loop
+var state;
+
 function afterImageLoad(renderer, stage){
     var ryanSprite = new Sprite(
         //loader.resources.ryanHead.texture //alternative
@@ -80,6 +83,10 @@ function afterImageLoad(renderer, stage){
     rocket.x = 32;
     rocket.y = 32;
 
+    //initialize the rockets velocity for later
+    rocket.vx = 0;
+    rocket.vy = 0;
+
     stage.addChild(rocket);
     renderer.render(stage);
 
@@ -99,12 +106,124 @@ function afterImageLoad(renderer, stage){
     //render
     renderer.render(stage);
 
+    /**
+     * Setup keybindings for UDLR control of rocket
+     */
+    setupKeyBindings(rocket);
+
     //make the rocket move
+    state = play;
     rocketMove();
+}
+
+function setupKeyBindings(sprite){
+    //Capture the keyboard arrow keys
+    var left = keyboard(37),
+        up = keyboard(38),
+        right = keyboard(39),
+        down = keyboard(40);
+
+    //Left arrow key `press` method
+    left.press = function() {
+
+        //Change the sprite's velocity when the key is pressed
+        sprite.vx = -5;
+        sprite.vy = 0;
+    };
+
+    //Left arrow key `release` method
+    left.release = function() {
+
+        //If the left arrow has been released, and the right arrow isn't down,
+        //and the sprite isn't moving vertically:
+        //Stop the sprite
+        if (!right.isDown && sprite.vy === 0) {
+            sprite.vx = 0;
+        }
+    };
+
+    //Up
+    up.press = function() {
+        sprite.vy = -5;
+        sprite.vx = 0;
+    };
+    up.release = function() {
+        if (!down.isDown && sprite.vx === 0) {
+            sprite.vy = 0;
+        }
+    };
+
+    //Right
+    right.press = function() {
+        sprite.vx = 5;
+        sprite.vy = 0;
+    };
+    right.release = function() {
+        if (!left.isDown && sprite.vy === 0) {
+            sprite.vx = 0;
+        }
+    };
+
+    //Down
+    down.press = function() {
+        sprite.vy = 5;
+        sprite.vx = 0;
+    };
+    down.release = function() {
+        if (!up.isDown && sprite.vx === 0) {
+            sprite.vy = 0;
+        }
+    };
 }
 
 function rocketMove(){
     requestAnimationFrame(rocketMove);
-    rocket.x += 1;
+
+    state();
+
     renderer.render(stage);
+}
+
+function play(){
+    //use velocity to update x/y positions
+    rocket.x += rocket.vx;
+    rocket.y += rocket.vy;
+}
+
+function keyboard(keyCode) {
+    var key = {};
+    key.code = keyCode;
+    key.isDown = false;
+    key.isUp = true;
+    key.press = undefined;
+    key.release = undefined;
+    //The `downHandler`
+    key.downHandler = function (event) {
+        if (event.keyCode === key.code) {
+            if (key.isUp && key.press) key.press();
+            key.isDown = true;
+            key.isUp = false;
+        }
+        event.preventDefault();
+    };
+
+    //The `upHandler`
+    key.upHandler = function (event) {
+        if (event.keyCode === key.code) {
+            if (key.isDown && key.release) key.release();
+            key.isDown = false;
+            key.isUp = true;
+        }
+        event.preventDefault();
+    };
+
+    //Attach event listeners
+    window.addEventListener(
+        "keydown", key.downHandler.bind(key), false
+    );
+    window.addEventListener(
+        "keyup", key.upHandler.bind(key), false
+    );
+
+    return key;
 }
