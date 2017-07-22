@@ -115,4 +115,7 @@
 #define MESHUTILITIES_API 
 #define KISMET_API DLLIMPORT
 #define NETWORKREPLAYSTREAMING_API 
+#define UMG_API DLLIMPORT
+#define MOVIESCENE_API DLLIMPORT
+#define MOVIESCENETRACKS_API DLLIMPORT
 #include "/Users/grobinson/git/github/30Day/thirtydaychallenge/breakout/Breakout/Source/Breakout/Breakout.h"
