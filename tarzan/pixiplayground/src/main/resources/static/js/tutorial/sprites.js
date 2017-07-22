@@ -21,6 +21,9 @@ function loadProgressHandler(loader, resource){
     console.log("progress: " + loader.progress + "%");
 }
 
+//let the rocket be accessed by other functions
+var rocket;
+
 function afterImageLoad(renderer, stage){
     var ryanSprite = new Sprite(
         //loader.resources.ryanHead.texture //alternative
@@ -71,7 +74,7 @@ function afterImageLoad(renderer, stage){
     tileset.frame = rectangle;
 
     //Create the sprite from the texture
-    var rocket = new Sprite(tileset);
+    rocket = new Sprite(tileset);
 
     //Position the rocket sprite on the canvas
     rocket.x = 32;
@@ -96,4 +99,12 @@ function afterImageLoad(renderer, stage){
     //render
     renderer.render(stage);
 
+    //make the rocket move
+    rocketMove();
+}
+
+function rocketMove(){
+    requestAnimationFrame(rocketMove);
+    rocket.x += 1;
+    renderer.render(stage);
 }
