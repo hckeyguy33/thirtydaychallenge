@@ -80,6 +80,10 @@ function afterImageLoad(renderer, stage){
     rocket.x = 32;
     rocket.y = 32;
 
+    //initialize the rockets velocity for later
+    rocket.vx = 0;
+    rocket.vy = 0;
+
     stage.addChild(rocket);
     renderer.render(stage);
 
@@ -105,6 +109,13 @@ function afterImageLoad(renderer, stage){
 
 function rocketMove(){
     requestAnimationFrame(rocketMove);
-    rocket.x += 1;
+
+    //set the velocity
+    rocket.vx = 1;
+    rocket.vy = 1;
+
+    //use velocity to update x/y positions
+    rocket.x += rocket.vx;
+    rocket.y += rocket.vy;
     renderer.render(stage);
 }
