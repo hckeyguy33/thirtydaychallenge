@@ -106,9 +106,74 @@ function afterImageLoad(renderer, stage){
     //render
     renderer.render(stage);
 
+    /**
+     * Setup keybindings for UDLR control of rocket
+     */
+    setupKeyBindings(rocket);
+
     //make the rocket move
     state = play;
     rocketMove();
+}
+
+function setupKeyBindings(sprite){
+    //Capture the keyboard arrow keys
+    var left = keyboard(37),
+        up = keyboard(38),
+        right = keyboard(39),
+        down = keyboard(40);
+
+    //Left arrow key `press` method
+    left.press = function() {
+
+        //Change the sprite's velocity when the key is pressed
+        sprite.vx = -5;
+        sprite.vy = 0;
+    };
+
+    //Left arrow key `release` method
+    left.release = function() {
+
+        //If the left arrow has been released, and the right arrow isn't down,
+        //and the sprite isn't moving vertically:
+        //Stop the sprite
+        if (!right.isDown && sprite.vy === 0) {
+            sprite.vx = 0;
+        }
+    };
+
+    //Up
+    up.press = function() {
+        sprite.vy = -5;
+        sprite.vx = 0;
+    };
+    up.release = function() {
+        if (!down.isDown && sprite.vx === 0) {
+            sprite.vy = 0;
+        }
+    };
+
+    //Right
+    right.press = function() {
+        sprite.vx = 5;
+        sprite.vy = 0;
+    };
+    right.release = function() {
+        if (!left.isDown && sprite.vy === 0) {
+            sprite.vx = 0;
+        }
+    };
+
+    //Down
+    down.press = function() {
+        sprite.vy = 5;
+        sprite.vx = 0;
+    };
+    down.release = function() {
+        if (!up.isDown && sprite.vx === 0) {
+            sprite.vy = 0;
+        }
+    };
 }
 
 function rocketMove(){
@@ -120,10 +185,6 @@ function rocketMove(){
 }
 
 function play(){
-    //set the velocity
-    rocket.vx = 1;
-    rocket.vy = 1;
-
     //use velocity to update x/y positions
     rocket.x += rocket.vx;
     rocket.y += rocket.vy;
