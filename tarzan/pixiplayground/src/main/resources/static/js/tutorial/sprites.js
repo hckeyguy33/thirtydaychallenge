@@ -24,6 +24,9 @@ function loadProgressHandler(loader, resource){
 //let the rocket be accessed by other functions
 var rocket;
 
+//for game loop
+var state;
+
 function afterImageLoad(renderer, stage){
     var ryanSprite = new Sprite(
         //loader.resources.ryanHead.texture //alternative
@@ -104,12 +107,19 @@ function afterImageLoad(renderer, stage){
     renderer.render(stage);
 
     //make the rocket move
+    state = play;
     rocketMove();
 }
 
 function rocketMove(){
     requestAnimationFrame(rocketMove);
 
+    state();
+
+    renderer.render(stage);
+}
+
+function play(){
     //set the velocity
     rocket.vx = 1;
     rocket.vy = 1;
@@ -117,5 +127,4 @@ function rocketMove(){
     //use velocity to update x/y positions
     rocket.x += rocket.vx;
     rocket.y += rocket.vy;
-    renderer.render(stage);
 }
