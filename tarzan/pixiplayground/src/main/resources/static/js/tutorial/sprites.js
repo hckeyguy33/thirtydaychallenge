@@ -28,6 +28,9 @@ var rocket;
 var state;
 
 function afterImageLoad(renderer, stage){
+    var spriteGroup = new Container();
+
+
     var ryanSprite = new Sprite(
         //loader.resources.ryanHead.texture //alternative
         //loader.resources.["ryanHead"].texture //another alternative
@@ -57,8 +60,7 @@ function afterImageLoad(renderer, stage){
     //ryanSprite.anchor.set(0.5, 0.5); //alternative
     ryanSprite.rotation = 0.5;
 
-    stage.addChild(ryanSprite);
-    renderer.render(stage);
+    spriteGroup.addChild(ryanSprite);
 
     //TODO anchor vs pivot... confusing
 
@@ -101,7 +103,18 @@ function afterImageLoad(renderer, stage){
     //Position the treasure next to the right edge of the canvas
     treasure.x = stage.width - treasure.width - 48;
     treasure.y = stage.height / 2 - treasure.height / 2;
-    stage.addChild(treasure);
+
+    //TODO why is the stage size so small? (64x64)
+    spriteGroup.addChild(treasure);
+
+    //tweak the sprite group
+    spriteGroup.width = 1000;
+    spriteGroup.height = 1000;
+    spriteGroup.x = 100;
+    spriteGroup.y = 100;
+
+    //add sprite group to stage
+    stage.addChild(spriteGroup);
 
     //render
     renderer.render(stage);
