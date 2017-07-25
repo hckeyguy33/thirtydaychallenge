@@ -16,4 +16,7 @@ Abandoning the Android project for now - may have bitten off more than I can che
 
 Instead, I'll be working on a web application, which I'm already quite familiar with, that makes heavy use of HTML5 graphics, which I'm unfamiliar with.
 
-The application will be a tool to help aid splitting up the cost of pizza beyond the usual "slice per person" model. It will account for other criteria, such as slice size, topping distribution, "take-home" slices, etc.
+The application will be a tool to help aid splitting up the cost of pizza beyond the usual "slice per person" model. It will account for other criteria, such as slice size, topping distribution, "take-home" slices, etc
+
+7/24/2017
+Almost finished Pixi tutorial. Will hopefully begin SplitPies by the end of the weekend.
