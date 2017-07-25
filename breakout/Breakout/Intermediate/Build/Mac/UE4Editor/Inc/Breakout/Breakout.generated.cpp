@@ -15,12 +15,19 @@ void EmptyLinkFunctionForGeneratedCode1Breakout() {}
 	{
 	}
 	IMPLEMENT_CLASS(ABreakoutGameModeBase, 3249791903);
+	void AUserBar::StaticRegisterNativesAUserBar()
+	{
+	}
+	IMPLEMENT_CLASS(AUserBar, 3158072830);
 #if USE_COMPILED_IN_NATIVES
 // Cross Module References
 	ENGINE_API class UClass* Z_Construct_UClass_AGameModeBase();
+	ENGINE_API class UClass* Z_Construct_UClass_APawn();
 
 	BREAKOUT_API class UClass* Z_Construct_UClass_ABreakoutGameModeBase_NoRegister();
 	BREAKOUT_API class UClass* Z_Construct_UClass_ABreakoutGameModeBase();
+	BREAKOUT_API class UClass* Z_Construct_UClass_AUserBar_NoRegister();
+	BREAKOUT_API class UClass* Z_Construct_UClass_AUserBar();
 	BREAKOUT_API class UPackage* Z_Construct_UPackage__Script_Breakout();
 	UClass* Z_Construct_UClass_ABreakoutGameModeBase_NoRegister()
 	{
@@ -55,6 +62,38 @@ void EmptyLinkFunctionForGeneratedCode1Breakout() {}
 	}
 	static FCompiledInDefer Z_CompiledInDefer_UClass_ABreakoutGameModeBase(Z_Construct_UClass_ABreakoutGameModeBase, &ABreakoutGameModeBase::StaticClass, TEXT("ABreakoutGameModeBase"), false, nullptr, nullptr, nullptr);
 	DEFINE_VTABLE_PTR_HELPER_CTOR(ABreakoutGameModeBase);
+	UClass* Z_Construct_UClass_AUserBar_NoRegister()
+	{
+		return AUserBar::StaticClass();
+	}
+	UClass* Z_Construct_UClass_AUserBar()
+	{
+		static UClass* OuterClass = NULL;
+		if (!OuterClass)
+		{
+			Z_Construct_UClass_APawn();
+			Z_Construct_UPackage__Script_Breakout();
+			OuterClass = AUserBar::StaticClass();
+			if (!(OuterClass->ClassFlags & CLASS_Constructed))
+			{
+				UObjectForceRegistration(OuterClass);
+				OuterClass->ClassFlags |= 0x20900080;
+
+
+				OuterClass->StaticLink();
+#if WITH_METADATA
+				UMetaData* MetaData = OuterClass->GetOutermost()->GetMetaData();
+				MetaData->SetValue(OuterClass, TEXT("HideCategories"), TEXT("Navigation"));
+				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("UserBar.h"));
+				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("UserBar.h"));
+#endif
+			}
+		}
+		check(OuterClass->GetClass());
+		return OuterClass;
+	}
+	static FCompiledInDefer Z_CompiledInDefer_UClass_AUserBar(Z_Construct_UClass_AUserBar, &AUserBar::StaticClass, TEXT("AUserBar"), false, nullptr, nullptr, nullptr);
+	DEFINE_VTABLE_PTR_HELPER_CTOR(AUserBar);
 	UPackage* Z_Construct_UPackage__Script_Breakout()
 	{
 		static UPackage* ReturnPackage = NULL;
@@ -63,8 +102,8 @@ void EmptyLinkFunctionForGeneratedCode1Breakout() {}
 			ReturnPackage = CastChecked<UPackage>(StaticFindObjectFast(UPackage::StaticClass(), NULL, FName(TEXT("/Script/Breakout")), false, false));
 			ReturnPackage->SetPackageFlags(PKG_CompiledIn | 0x00000000);
 			FGuid Guid;
-			Guid.A = 0x7B50A34B;
-			Guid.B = 0x06FA9CDB;
+			Guid.A = 0xAB7EA46A;
+			Guid.B = 0x5BCEE400;
 			Guid.C = 0x00000000;
 			Guid.D = 0x00000000;
 			ReturnPackage->SetGuid(Guid);
