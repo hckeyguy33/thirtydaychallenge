@@ -9,6 +9,12 @@ AUserBar::AUserBar()
 {
  	// Set this pawn to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
+    
+    // Our root component will be a box that reacts to physics
+    UBoxComponent* BoxComponent = CreateDefaultSubobject<UBoxComponent>(TEXT("RootComponent"));
+    RootComponent = BoxComponent;
+    //BoxComponent->InitSphereRadius(40.0f);
+    BoxComponent->SetCollisionProfileName(TEXT("Pawn"));
 
 }
 
