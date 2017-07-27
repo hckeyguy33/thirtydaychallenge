@@ -15,6 +15,18 @@ AUserBar::AUserBar()
     RootComponent = BoxComponent;
     //BoxComponent->InitSphereRadius(40.0f);
     BoxComponent->SetCollisionProfileName(TEXT("Pawn"));
+    
+    // Create and position a mesh component so we can see where our box is
+    UStaticMeshComponent* BoxVisual = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("VisualRepresentation"));
+    BoxVisual->SetupAttachment(RootComponent);
+    //need to bring in starter shape and use here
+//    static ConstructorHelpers::FObjectFinder<UStaticMesh> SphereVisualAsset(TEXT("/Game/StarterContent/Shapes/Shape_Sphere.Shape_Sphere"));
+//    if (SphereVisualAsset.Succeeded())
+//    {
+//        SphereVisual->SetStaticMesh(SphereVisualAsset.Object);
+//        SphereVisual->SetRelativeLocation(FVector(0.0f, 0.0f, -40.0f));
+//        SphereVisual->SetWorldScale3D(FVector(0.8f));
+    }
 
 }
 
