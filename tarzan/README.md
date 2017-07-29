@@ -20,3 +20,6 @@ The application will be a tool to help aid splitting up the cost of pizza beyond
 
 7/24/2017
 Almost finished Pixi tutorial. Will hopefully begin SplitPies by the end of the weekend.
+
+7/29/2017
+Finished the pixi tutorial. I have since learned of a development environment that uses Pixi and a bunch of other modules and streamlines them for ease of use. I am currently debating whether it's worth learning Hexi before starting SplitPies, or begin writing SplitPies using exclusively PixiJS.
