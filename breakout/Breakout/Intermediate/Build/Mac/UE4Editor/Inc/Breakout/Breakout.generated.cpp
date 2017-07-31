@@ -15,6 +15,10 @@ void EmptyLinkFunctionForGeneratedCode1Breakout() {}
 	{
 	}
 	IMPLEMENT_CLASS(ABreakoutGameModeBase, 3249791903);
+	void USlidingMovementComponent::StaticRegisterNativesUSlidingMovementComponent()
+	{
+	}
+	IMPLEMENT_CLASS(USlidingMovementComponent, 176361710);
 	void AUserBar::StaticRegisterNativesAUserBar()
 	{
 	}
@@ -22,10 +26,13 @@ void EmptyLinkFunctionForGeneratedCode1Breakout() {}
 #if USE_COMPILED_IN_NATIVES
 // Cross Module References
 	ENGINE_API class UClass* Z_Construct_UClass_AGameModeBase();
+	ENGINE_API class UClass* Z_Construct_UClass_UPawnMovementComponent();
 	ENGINE_API class UClass* Z_Construct_UClass_APawn();
 
 	BREAKOUT_API class UClass* Z_Construct_UClass_ABreakoutGameModeBase_NoRegister();
 	BREAKOUT_API class UClass* Z_Construct_UClass_ABreakoutGameModeBase();
+	BREAKOUT_API class UClass* Z_Construct_UClass_USlidingMovementComponent_NoRegister();
+	BREAKOUT_API class UClass* Z_Construct_UClass_USlidingMovementComponent();
 	BREAKOUT_API class UClass* Z_Construct_UClass_AUserBar_NoRegister();
 	BREAKOUT_API class UClass* Z_Construct_UClass_AUserBar();
 	BREAKOUT_API class UPackage* Z_Construct_UPackage__Script_Breakout();
@@ -62,6 +69,38 @@ void EmptyLinkFunctionForGeneratedCode1Breakout() {}
 	}
 	static FCompiledInDefer Z_CompiledInDefer_UClass_ABreakoutGameModeBase(Z_Construct_UClass_ABreakoutGameModeBase, &ABreakoutGameModeBase::StaticClass, TEXT("ABreakoutGameModeBase"), false, nullptr, nullptr, nullptr);
 	DEFINE_VTABLE_PTR_HELPER_CTOR(ABreakoutGameModeBase);
+	UClass* Z_Construct_UClass_USlidingMovementComponent_NoRegister()
+	{
+		return USlidingMovementComponent::StaticClass();
+	}
+	UClass* Z_Construct_UClass_USlidingMovementComponent()
+	{
+		static UClass* OuterClass = NULL;
+		if (!OuterClass)
+		{
+			Z_Construct_UClass_UPawnMovementComponent();
+			Z_Construct_UPackage__Script_Breakout();
+			OuterClass = USlidingMovementComponent::StaticClass();
+			if (!(OuterClass->ClassFlags & CLASS_Constructed))
+			{
+				UObjectForceRegistration(OuterClass);
+				OuterClass->ClassFlags |= 0x20B00084;
+
+
+				OuterClass->ClassConfigName = FName(TEXT("Engine"));
+				OuterClass->StaticLink();
+#if WITH_METADATA
+				UMetaData* MetaData = OuterClass->GetOutermost()->GetMetaData();
+				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("SlidingMovementComponent.h"));
+				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("SlidingMovementComponent.h"));
+#endif
+			}
+		}
+		check(OuterClass->GetClass());
+		return OuterClass;
+	}
+	static FCompiledInDefer Z_CompiledInDefer_UClass_USlidingMovementComponent(Z_Construct_UClass_USlidingMovementComponent, &USlidingMovementComponent::StaticClass, TEXT("USlidingMovementComponent"), false, nullptr, nullptr, nullptr);
+	DEFINE_VTABLE_PTR_HELPER_CTOR(USlidingMovementComponent);
 	UClass* Z_Construct_UClass_AUserBar_NoRegister()
 	{
 		return AUserBar::StaticClass();
@@ -102,8 +141,8 @@ void EmptyLinkFunctionForGeneratedCode1Breakout() {}
 			ReturnPackage = CastChecked<UPackage>(StaticFindObjectFast(UPackage::StaticClass(), NULL, FName(TEXT("/Script/Breakout")), false, false));
 			ReturnPackage->SetPackageFlags(PKG_CompiledIn | 0x00000000);
 			FGuid Guid;
-			Guid.A = 0xAB7EA46A;
-			Guid.B = 0x5BCEE400;
+			Guid.A = 0xB6FF1FB4;
+			Guid.B = 0x5A4F3303;
 			Guid.C = 0x00000000;
 			Guid.D = 0x00000000;
 			ReturnPackage->SetGuid(Guid);

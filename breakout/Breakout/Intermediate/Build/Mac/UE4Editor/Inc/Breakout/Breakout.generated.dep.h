@@ -9,6 +9,9 @@
 #ifndef BREAKOUT_BreakoutGameModeBase_generated_h
 	#include "BreakoutGameModeBase.h"
 #endif
+#ifndef BREAKOUT_SlidingMovementComponent_generated_h
+	#include "SlidingMovementComponent.h"
+#endif
 #ifndef BREAKOUT_UserBar_generated_h
 	#include "UserBar.h"
 #endif

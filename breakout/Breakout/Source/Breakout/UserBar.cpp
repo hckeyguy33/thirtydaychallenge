@@ -1,6 +1,7 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 #include "Breakout.h"
+#include "SlidingMovementComponent.h"
 #include "UserBar.h"
 
 
@@ -20,13 +21,20 @@ AUserBar::AUserBar()
     UStaticMeshComponent* BoxVisual = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("VisualRepresentation"));
     BoxVisual->SetupAttachment(RootComponent);
     //need to bring in starter shape and use here
-//    static ConstructorHelpers::FObjectFinder<UStaticMesh> SphereVisualAsset(TEXT("/Game/StarterContent/Shapes/Shape_Sphere.Shape_Sphere"));
-//    if (SphereVisualAsset.Succeeded())
-//    {
-//        SphereVisual->SetStaticMesh(SphereVisualAsset.Object);
-//        SphereVisual->SetRelativeLocation(FVector(0.0f, 0.0f, -40.0f));
+    static ConstructorHelpers::FObjectFinder<UStaticMesh> BoxVisualAsset(TEXT("/Game/MobileStarterContent/Shapes/Shape_Cube"));
+    if (BoxVisualAsset.Succeeded())
+    {
+        BoxVisual->SetStaticMesh(BoxVisualAsset.Object);
+        BoxVisual->SetRelativeLocation(FVector(0.0f, 0.0f, 0.0f));
 //        SphereVisual->SetWorldScale3D(FVector(0.8f));
     }
+    
+    // Take control of the default player
+    AutoPossessPlayer = EAutoReceiveInput::Player0;
+    
+    // Create an instance of our movement component, and tell it to update the root.
+    OurMovementComponent = CreateDefaultSubobject<USlidingMovementComponent>(TEXT("CustomMovementComponent"));
+    OurMovementComponent->UpdatedComponent = RootComponent;
 
 }
 
@@ -48,6 +56,20 @@ void AUserBar::Tick(float DeltaTime)
 void AUserBar::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
+    
+    InputComponent->BindAxis("HorizontalSlide", this, &AUserBar::MoveRight);
 
+}
+UPawnMovementComponent* AUserBar::GetMovementComponent() const
+{
+    return OurMovementComponent;
+}
+
+void AUserBar::MoveRight(float AxisValue)
+{
+    if (OurMovementComponent && (OurMovementComponent->UpdatedComponent == RootComponent))
+    {
+        OurMovementComponent->AddInputVector(GetActorRightVector() * AxisValue);
+    }
 }
 
