@@ -2,7 +2,7 @@
 	"TargetName" : "BreakoutEditor",
 	"Platform" : "Mac",
 	"Configuration" : "Development",
-	"BuildId" : "f516facb-6d99-41f1-bd02-9e18607b87f7",
+	"BuildId" : "c71a16d8-414e-4f74-a7bb-c400a144fc72",
 	"Version" : 
 	{
 		"MajorVersion" : 4,
@@ -17,11 +17,11 @@
 	"BuildProducts" :
 	[
 		{
-			"Path" : "$(ProjectDir)/Binaries/Mac/UE4Editor-Breakout-4341.dylib",
+			"Path" : "$(ProjectDir)/Binaries/Mac/UE4Editor-Breakout-8500.dylib",
 			"Type" : "DynamicLibrary"
 		},
 		{
-			"Path" : "$(ProjectDir)/Binaries/Mac/UE4Editor-Breakout-4341.dSYM",
+			"Path" : "$(ProjectDir)/Binaries/Mac/UE4Editor-Breakout-8500.dSYM",
 			"Type" : "SymbolFile"
 		},
 		{

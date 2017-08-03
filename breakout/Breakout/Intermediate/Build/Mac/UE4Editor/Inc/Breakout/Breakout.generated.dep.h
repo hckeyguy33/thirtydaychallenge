@@ -6,6 +6,9 @@
 ===========================================================================*/
 
 #include "GeneratedCppIncludes.h"
+#ifndef BREAKOUT_Ball_generated_h
+	#include "Ball.h"
+#endif
 #ifndef BREAKOUT_BreakoutGameModeBase_generated_h
 	#include "BreakoutGameModeBase.h"
 #endif

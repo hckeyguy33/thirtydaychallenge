@@ -1,9 +1,9 @@
 {
 	"Changelist" : 3450819,
 	"CompatibleChangelist" : 3299760,
-	"BuildId" : "f516facb-6d99-41f1-bd02-9e18607b87f7",
+	"BuildId" : "c71a16d8-414e-4f74-a7bb-c400a144fc72",
 	"Modules" : 
 	{
-		"Breakout" : "UE4Editor-Breakout-4341.dylib"
+		"Breakout" : "UE4Editor-Breakout-8500.dylib"
 	}
 }
