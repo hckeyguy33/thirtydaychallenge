@@ -5,7 +5,7 @@
 <script>
     //globals
     //TODO make a more elegant version vs using globals
-    var renderer;
+    var renderer, pizza;
 
     function setupCanvas() {
         var renderer = autoDetectRenderer(500, 500);
@@ -28,7 +28,9 @@
     $(document).ready(function(){
         renderer = setupCanvas();
         var stage = new Container();
-        drawPizza(renderer, stage);
+        pizza = getPlainPizza(renderer);
+        stage.addChild(pizza);
+        renderer.render(pizza);
     })
 
 </script>

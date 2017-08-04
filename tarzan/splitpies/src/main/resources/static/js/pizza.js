@@ -10,9 +10,3 @@ function getPlainPizza(renderer){
     circle.endFill();
     return circle;
 }
-
-function drawPizza(renderer, stage){
-    pizza = getPlainPizza(renderer);
-    stage.addChild(pizza);
-    renderer.render(stage);
-}
