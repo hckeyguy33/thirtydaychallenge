@@ -3,7 +3,9 @@
 <script src="js/aliases.js"></script>
 <script src="js/pizza.js"></script>
 <script>
-
+    //globals
+    //TODO make a more elegant version vs using globals
+    var renderer;
 
     function setupCanvas() {
         var renderer = autoDetectRenderer(500, 500);
@@ -24,7 +26,9 @@
     }
 
     $(document).ready(function(){
-        setupCanvas();
+        renderer = setupCanvas();
+        var stage = new Container();
+        drawPizza(renderer, stage);
     })
 
 </script>
