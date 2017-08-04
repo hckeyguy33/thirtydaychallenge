@@ -29,8 +29,10 @@
         renderer = setupCanvas();
         var stage = new Container();
         pizza = getPlainPizza(renderer);
+        var cuts = cutPizza(pizza, 8); //TODO get cuts from user
         stage.addChild(pizza);
-        renderer.render(pizza);
+        //stage.addChild(cuts);
+        renderer.render(stage);
     })
 
 </script>

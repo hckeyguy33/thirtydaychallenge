@@ -10,3 +10,17 @@ function getPlainPizza(renderer){
     circle.endFill();
     return circle;
 }
+
+/**
+ * return an array of lines to draw and 'cut' the pizza
+ * @param pizza
+ * @param slices
+ */
+function cutPizza(pizza, slices){
+
+    var cuts = [];
+
+    return cuts;
+
+
+}
